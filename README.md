@@ -1,5 +1,6 @@
 # Census_tweet_browser
 ##### The code for the Tweet browser comes from Dr. Robyn Ferg (https://github.com/robynferg/Census_tweet_browser)
+##### Information about building and publishing docker images automatically from GitHub source code repo: https://docs.google.com/document/d/1S_N8APw9fSzm9oU7ltqb6gXpILp_4CMAjjzdpbGldPs/edit?usp=sharing
 Files: 
 - allCensus_sample.csv: Random sample (0.5%) of all 'Census' tweets provided by Sprinklr query.
 - app_with_advanced_options.py: Tweet browser in Dash. Performs dimension reduction and clustering on document-word matrix to obtain cluster labels for each tweet. 
