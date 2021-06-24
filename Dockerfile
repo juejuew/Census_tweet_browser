@@ -10,11 +10,6 @@ RUN /usr/bin/python3 -m pip install --upgrade pip
 
 ### Packages
 RUN pip install dash dash_bootstrap_components dash_html_components dash_table dash_extensions sklearn spicy nltk umap umap-learn hdbscan chart_studio 
-### Clean up after installation
-RUN apt clean
-RUN rm -rf /root/.cache
-RUN rm -rf /tmp/*
-ENV DEBIAN_FRONTEND teletype
 
 WORKDIR /startup
 CMD ["bash", "/startup/startup.sh"]
