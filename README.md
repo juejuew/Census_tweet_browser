@@ -1,5 +1,5 @@
 # Census_tweet_browser
-
+## The code for the Twitter browser comes from Dr. Robyn Ferg (https://github.com/robynferg/Census_tweet_browser)
 Files: 
 - allCensus_sample.csv: Random sample (0.5%) of all 'Census' tweets provided by Sprinklr query.
 - app_with_advanced_options.py: Tweet browser in Dash. Performs dimension reduction and clustering on document-word matrix to obtain cluster labels for each tweet. 
