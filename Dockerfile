@@ -11,8 +11,6 @@ RUN /usr/bin/python3 -m pip install --upgrade pip
 ### Packages
 RUN pip install dash dash_bootstrap_components dash_html_components dash_table dash_extensions sklearn spicy nltk umap umap-learn hdbscan chart_studio 
 
-WORKDIR /startup
-CMD ["bash", "/startup/startup.sh"]
 WORKDIR /home/rep/
 COPY allCensus_sample.csv allCensus_sample.csv
 COPY trust_condensed_sample_smaller.csv trust_condensed_sample_smaller.csv 
