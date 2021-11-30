@@ -406,9 +406,14 @@ us_state_abbrev = {
 
 # state populations, from https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-total.html
 # need for normalizing number of tweets per person in each state
-state_pops = pd.read_csv('state_populations.csv', index_col=0)
+state_pops = pd.read_csv('state_populations.csv', index_col=0, header=None)
 state_pops.index = [state[1:] for state in state_pops.index]
 state_pops = state_pops.iloc[:,0]
+
+# convert population to numeric
+state_pops_tmp = pd.Series([float(pop.replace(',', '')) for pop in state_pops])
+state_pops_tmp.index = [state for state in state_pops.index]
+state_pops = state_pops_tmp
 
 # functions for dimension reduction: PCA and UMAP
 def dimred_PCA(docWordMatrix, ndims=25):
