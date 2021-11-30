@@ -356,6 +356,7 @@ us_state_abbrev = {
     'Connecticut': 'CT',
     'Delaware': 'DE',
     'Washington, D.C.': 'DC',
+    'District of Columbia': 'DC',
     'Florida': 'FL',
     'Georgia': 'GA',
     'Guam': 'GU',
