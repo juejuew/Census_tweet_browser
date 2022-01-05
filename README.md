@@ -1,4 +1,5 @@
 # Census_tweet_browser
+##### Instruction: https://docs.google.com/document/d/1TwewIL_s-DMxFZsPjDiwT5JdL93WK6LK/edit?usp=sharing&ouid=102712539030049285846&rtpof=true&sd=true
 ##### The code for the Tweet browser comes from Dr. Robyn Ferg (https://github.com/robynferg/Census_tweet_browser)
 ##### Information about building and publishing docker images automatically from GitHub source code repo: https://docs.google.com/document/d/1S_N8APw9fSzm9oU7ltqb6gXpILp_4CMAjjzdpbGldPs/edit?usp=sharing
 Files: 
