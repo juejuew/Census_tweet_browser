@@ -53,24 +53,13 @@ from rpy2 import robjects
 from rpy2.robjects import pandas2ri
 pandas2ri.activate()
 # import R's packages
-# base = importr('base', lib_loc = "/usr/local/lib/R/site-library")
-# utils = importr('utils', lib_loc = "/usr/local/lib/R/site-library")
 dplyr = importr('dplyr', lib_loc = "/usr/local/lib/R/site-library")
 useful = importr('useful', lib_loc = "/usr/local/lib/R/site-library")
-# patchwork = importr('patchwork')
-# cluster = importr('cluster')
-# ggplot2 = importr('ggplot2')
-# randomNames = importr('randomNames')
 tidyverse = importr('tidyverse', lib_loc = "/usr/local/lib/R/site-library")
 lubridate = importr('lubridate', lib_loc = "/usr/local/lib/R/site-library")
 ggplot2 = importr('ggplot2', lib_loc = "/usr/local/lib/R/site-library")
 stringr = importr('stringr', lib_loc = "/usr/local/lib/R/site-library")
-# monocle3 = importr('monocle3')
 reshape2 = importr('reshape2', lib_loc = "/usr/local/lib/R/site-library")
-# pairwise = importr('pairwise')
-# scales = importr('scales')
-# text2vec = importr('text2vec')
-# Matrix = importr('Matrix')
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -79,11 +68,6 @@ server = app.server
 app.config.suppress_callback_exceptions = True
 
 du.configure_upload(app, folder='temp', use_upload_id = False)
-
-#UPLOAD_FOLDER_ROOT = r"C:\tmp\Uploads"
-#du.configure_upload(app, UPLOAD_FOLDER_ROOT)
-
-
 
 ## Layout
 
@@ -450,25 +434,6 @@ app.layout = html.Div([Navbar(), main_layout])
 #     return 'You have selected "{}"'.format(value)
 
 # this function reads in the data (copied from online)
-'''
-def parse_data(contents, filename):
-    content_type, content_string = contents.split(",")
-   decoded = base64.b64decode(content_string)
-   try:
-        if "csv" in filename:
-            # Assume that the user uploaded a CSV or TXT file
-            df = pd.read_csv(io.StringIO(decoded.decode("utf-8")))
-        elif "xls" in filename:
-            # Assume that the user uploaded an excel file
-            df = pd.read_excel(io.BytesIO(decoded))
-        elif "txt" or "tsv" in filename:
-            # Assume that the user upl, delimiter = r'\s+'oaded an excel file
-            df = pd.read_csv(io.StringIO(decoded.decode("utf-8")), delimiter=r"\s+")
-    except Exception as e:
-        print(e)
-        return html.Div(["There was an error processing this file."])
-    return df
-'''
 def parse_data(filename):
     path = 'temp/' + filename
     try:
