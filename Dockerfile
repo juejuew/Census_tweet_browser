@@ -9,7 +9,14 @@ WORKDIR /home/rep/
 RUN /usr/bin/python3 -m pip install --upgrade pip
 
 ### Packages
-RUN pip install dash dash_bootstrap_components dash_html_components dash_table dash_extensions dash_uploader rpy2 sklearn spicy nltk umap umap-learn hdbscan chart_studio 
+RUN pip install dash dash_bootstrap_components dash_html_components dash_table dash_extensions dash_uploader rpy2 sklearn spicy nltk umap umap-learn hdbscan chart_studio
+RUN R -e "install.packages('dplyr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('useful',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('tidyverse',dependencies=TRUE, repos='http://cran.rstudio.com/')" 
+RUN R -e "install.packages('lubridate',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('ggplot2',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('stringr',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('reshape2',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
 WORKDIR /home/rep/
 COPY allCensus_sample.csv allCensus_sample.csv
